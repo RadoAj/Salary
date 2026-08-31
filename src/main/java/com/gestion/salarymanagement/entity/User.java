@@ -1,0 +1,32 @@
+package com.gestion.salarymanagement.entity;
+
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Date;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "app_user")
+public class User {
+    @Id
+    @GeneratedValue
+    private Long id;
+    private String username;
+    private String email;
+    private String password;
+    @Builder.Default
+    private String role = "ADMIN";
+    @Column(name = "reset_token")
+    private String resetToken;
+
+    @Column(name = "reset_token_expiry")
+    private Date resetTokenExpiry;
+}
