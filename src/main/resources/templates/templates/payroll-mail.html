@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; font-size: 14px; color: #333; padding: 20px; }
+        .container { max-width: 600px; margin: auto; border: 1px solid #ddd; border-radius: 8px; padding: 20px; background-color: #fefefe; }
+        .header { text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+        .footer { margin-top: 30px; font-size: 12px; color: #777; border-top: 1px solid #ccc; padding-top: 10px; text-align: center; }
+        .highlight { font-weight: bold; color: #2c3e50; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2>Fiche de Paie</h2>
+    </div>
+
+    <p>Bonjour <span class="highlight" th:text="${employeeName}">Nom Employé</span>,</p>
+
+    <p>Nous vous prions de bien vouloir trouver ci-joint votre fiche de paie correspondant à la période suivante :</p>
+
+    <p>
+        <strong>Début de période :</strong>
+        <span th:text="${periodStart}">Début</span>
+    </p>
+    <p>
+        <strong>Fin de période :</strong>
+        <span th:text="${periodEnd}">Fin</span>
+    </p>
+
+    <p>Nous vous invitons à consulter le document en pièce jointe.</p>
+
+    <p>Cordialement,<br>
+        L’équipe des Ressources Humaines</p>
+
+    <div class="footer">
+        Izy M'Lay Entreprise — Service RH
+    </div>
+</div>
+</body>
+</html>
